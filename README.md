@@ -1,23 +1,978 @@
-# 🏥 Medi-Chain AI: Proactive Healthcare System
-**Transforming healthcare from reactive to proactive.**
+[index1.html](https://github.com/user-attachments/files/25057882/index1.html)
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi-Chain AI | الذكاء الاستباقي المنقذ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap">
+    <style>
+        :root {
+            --primary: #4A6FFF;
+            --primary-light: #6D8AFF;
+            --secondary: #00D4AA;
+            --accent: #FF3366;
+            --light-bg: #F8FAFF;
+            --card-bg: #FFFFFF;
+            --text-dark: #1A202C;
+            --text-gray: #718096;
+            --text-light: #4A5568;
+            --border: #E2E8F0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
 
-## 🌟 Project Overview
-Medi-Chain AI is an integrated ecosystem designed to bridge the gap between patients, doctors, and laboratories. By leveraging **Artificial Intelligence (AI)** and **IoT tools**, the system ensures high-level health security and proactive care, especially for chronic disease management.
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
 
-## 🚀 Key Features
-* **Smart SOS System**: Instant alerts with real-time GPS location and medical history sent to emergency services and family.
-* **Digital Twin Technology**: Simulation models that predict health crises up to 6 hours before they occur.
-* **Family Care (Voice Alerts)**: Medicine reminders recorded in the voices of family members to increase emotional compliance.
-* **Smart Prescription Scanner**: Converts handwritten prescriptions into digital schedules using AI.
-* **Blockchain Security**: Ensures medical data is encrypted and protected globally.
+        html {
+            scroll-behavior: smooth;
+        }
 
-## 🛠️ Built With
-* **Frontend**: HTML5, CSS3 (Glassmorphism), JavaScript (ES6).
-* **Design**: Cairo Font, FontAwesome icons.
-* **Integration (Planned)**: Blockchain & AI APIs.
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-## 👨‍💻 About the Developer
-I am a second-year student at **October 6 University**, specializing in Computer Science (expected graduation 2028). I have a deep interest in C++, Assembly, and mobile development using Flutter.
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
----
-*Created with passion for a safer healthy life.*
+        /* الهيدر */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* الأزرار */
+        .btn {
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 111, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 111, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(74, 111, 255, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-dark);
+            border: none;
+            padding: 8px 16px;
+        }
+
+        .btn-ghost:hover {
+            color: var(--primary);
+        }
+
+        /* 1️⃣ قسم البطل */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #F8FAFF 0%, #FFFFFF 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* 2️⃣ قسم المميزات */
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 35px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* 3️⃣ كيف يعمل */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--light-bg);
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 25px;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .step p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 30px;
+            left: -20%;
+            width: 40%;
+            height: 2px;
+            background: var(--border);
+        }
+
+        .step:nth-child(1) .step-connector {
+            display: none;
+        }
+
+        /* 4️⃣ المستخدمون المستهدفون */
+        .use-cases {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .use-case-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 35px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .use-case-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--secondary), #00E6B8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .use-case-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .use-case-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* 5️⃣ Call To Action */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary);
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 6️⃣ الفوتر */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* تأثيرات الظهور */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .steps-container {
+                flex-direction: column;
+                gap: 60px;
+            }
+            
+            .step-connector {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* تأثيرات إضافية */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(74, 111, 255, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(74, 111, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 111, 255, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container nav-container">
+            <a href="#hero" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="logo-text">Medi-Chain AI</div>
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">المميزات</a>
+                <a href="#how-it-works" class="nav-link">كيف يعمل</a>
+                <a href="#use-cases" class="nav-link">لمن</a>
+                <a href="#cta" class="nav-link">ابدأ الآن</a>
+                <a href="#" class="btn btn-secondary">تسجيل الدخول</a>
+            </div>
+            <a href="#cta" class="btn btn-primary" style="display: none;">جرب الآن</a>
+        </div>
+    </header>
+
+    <!-- 1️⃣ قسم البطل -->
+    <section class="hero" id="hero">
+        <div class="container hero-content fade-in">
+            <h1>حول رعايتك الصحية من <span>رد فعل</span> إلى <span>استباقي</span></h1>
+            <p>Medi-Chain AI هي المنظومة الذكية التي تربط المريض بالأطباء والمعامل عبر الذكاء الاصطناعي، لتحذيرك من المخاطر الصحية قبل حدوثها وتوصيل بياناتك الطبية للمسعفين في ثوانٍ.</p>
+            <div class="hero-buttons">
+                <a href="#cta" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    جرب الآن مجاناً
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    شاهد الفيديو
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2️⃣ قسم المميزات -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>مميزات تجعل Medi-Chain AI فريداً</h2>
+                <p>منظومة متكاملة تقدم 15 ميزة ذكية لرعاية صحية استباقية وآمنة</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>نظام الطوارئ الذكي</h3>
+                    <p>زر SOS يرسل موقعك وبياناتك الطبية للمسعفين والعائلة في ثوانٍ</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>رادار صحي تنبؤي</h3>
+                    <p>تحليل ذكي للقياسات يعطيك إنذاراً مبكراً قبل حدوث الأزمات الصحية</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>ربط عائلي آمن</h3>
+                    <p>إشعارات فورية للعائلة عند نسيان الدواء أو وجود خلل في القياسات</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>أسورة QR المنقذة</h3>
+                    <p>تخزن فصيلة الدم والحساسيات وتُقرأ بكاميرة الهاتف في حالات الطوارئ</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-prescription"></i>
+                    </div>
+                    <h3>ماسح الروشتة الذكي</h3>
+                    <p>صور الروشتة الورقية ليتحول تلقائياً إلى جدول أدوية رقمي</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>مترجم التحاليل</h3>
+                    <p>تبسيط المصطلحات الطبية المعقدة لشرح مفهوم للمريض وأسرته</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ كيف يعمل -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>كيف تعمل المنظومة؟</h2>
+                <p>3 خطوات بسيطة تفصل بينك وبين رعاية صحية ذكية</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-connector"></div>
+                    <div class="step-number">1</div>
+                    <h3>سجّل حسابك</h3>
+                    <p>أنشئ حساباً في دقيقة واحدة، وأدخل بياناتك الأساسية وبيانات الطوارئ</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-connector"></div>
+                    <div class="step-number">2</div>
+                    <h3>ربط الأجهزة والأدوات</h3>
+                    <p>اربط أجهزة القياس، أدخل أدويتك، واختر وكيلك الصحي من العائلة</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-connector"></div>
+                    <div class="step-number">3</div>
+                    <h3>تمتع بالرعاية الذكية</h3>
+                    <p>استلم تنبيهات ذكية، وحلل قياساتك، وكن مطمئناً بوجود شبكة أمان طبية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ المستخدمون المستهدفون -->
+    <section class="use-cases" id="use-cases">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>لمن صممت Medi-Chain AI؟</h2>
+                <p>منظومة ذكية تناسب احتياجات متنوعة في الرعاية الصحية</p>
+            </div>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h3>المرضى المزمنون</h3>
+                    <p>مرضى السكر، الضغط، القلب الذين يحتاجون مراقبة مستمرة وتنبيهات ذكية</p>
+                </div>
+                
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>كبار السن</h3>
+                    <p>توفير واجهة مبسطة وأوامر صوتية وربط مع العائلة لضمان سلامتهم</p>
+                </div>
+                
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>العائلات</h3>
+                    <p>لراحة بال الأبناء على آبائهم المسنين وتلقي إشعارات فورية عن حالتهم</p>
+                </div>
+                
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>الأطباء</h3>
+                    <p>للوصول لبيانات المرضى التاريخية وتقارير شهرية دقيقة تسرع التشخيص</p>
+                </div>
+                
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h3>المستشفيات</h3>
+                    <p>توفير بيانات طوارئ فورية للمسعفين وربط تلقائي مع أنظمة المستشفى</p>
+                </div>
+                
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>المهتمون بالصحة</h3>
+                    <p>لمن يريد مراقبة صحته بشكل استباقي والتنبيه المبكر عن المخاطر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ Call To Action -->
+    <section class="cta-section" id="cta">
+        <div class="container cta-content fade-in">
+            <h2>ابدأ رحلتك نحو رعاية صحية ذكية</h2>
+            <p>انضم لأكثر من 50,000 مستخدم يثقون بـ Medi-Chain AI لحماية صحتهم وأحبائهم</p>
+            <button class="cta-button pulse-animation">
+                <i class="fas fa-play"></i>
+                ابدأ التجربة المجانية الآن
+            </button>
+            <p style="margin-top: 25px; font-size: 0.95rem; opacity: 0.8;">تجربة 14 يوم مجاناً • لا حاجة لبطاقة ائتمان</p>
+        </div>
+    </section>
+
+    <!-- 6️⃣ الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Medi-Chain AI</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 15px; line-height: 1.7;">الذكاء الاستباقي المنقذ لتحويل الرعاية الصحية من رد فعل إلى استباقي</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">الرئيسية</a></li>
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#how-it-works">كيف يعمل</a></li>
+                        <li><a href="#use-cases">لمن</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>الدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">الدعم الفني</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>اتصل بنا</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope" style="margin-left: 8px;"></i> info@medichain.ai</li>
+                        <li><i class="fas fa-phone" style="margin-left: 8px;"></i> +20 123 456 7890</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-left: 8px;"></i> القاهرة، مصر</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 Medi-Chain AI. جميع الحقوق محفوظة | مشروع تخرج - جامعة 6 أكتوبر</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تأثير الظهور عند التمرير
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // تغيير الهيدر عند التمرير
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 25px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+                header.style.padding = '15px 0';
+            }
+        });
+
+        // التنقل السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // زر CTA تفاعلي
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحويل...';
+            this.style.opacity = '0.8';
+            this.style.cursor = 'not-allowed';
+            
+            setTimeout(() => {
+                alert('مرحباً بك في Medi-Chain AI! سيتم تحويلك إلى صفحة التسجيل...');
+                this.innerHTML = '<i class="fas fa-check"></i> تم التحويل بنجاح';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-play"></i> ابدأ التجربة المجانية الآن';
+                    this.style.opacity = '1';
+                    this.style.cursor = 'pointer';
+                }, 2000);
+            }, 1500);
+        });
+
+        // إظهار/إخفاء الهيدر على الموبايل
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuButton = document.querySelector('.btn-primary');
+        
+        if (window.innerWidth <= 992) {
+            mobileMenuButton.style.display = 'inline-flex';
+            
+            mobileMenuButton.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.right = '20px';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '20px';
+                navLinks.style.borderRadius = '12px';
+                navLinks.style.boxShadow = '0 10px 40px rgba(0,0,0,0.1)';
+                navLinks.style.width = '250px';
+                navLinks.style.gap = '20px';
+            });
+        }
+
+        // إضافة تأثيرات Hover للبطاقات
+        document.querySelectorAll('.feature-card, .use-case-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // تحديث تلقائي لأرقام الإحصائيات
+        function updateStats() {
+            const stats = {
+                users: 52000,
+                alerts: 1250000,
+                emergencies: 8500
+            };
+            
+            // يمكن إضافة تأثير عد متدرج هنا
+            console.log('المستخدمون النشطون:', stats.users);
+        }
+
+        // تهيئة عند التحميل
+        document.addEventListener('DOMContentLoaded', () => {
+            revealOnScroll();
+            updateStats();
+            
+            // إضافة تاريخ اليوم في الفوتر
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.querySelector('.copyright p');
+            if (yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2024', currentYear);
+            }
+        });
+    </script>
+</body>
+</html>
